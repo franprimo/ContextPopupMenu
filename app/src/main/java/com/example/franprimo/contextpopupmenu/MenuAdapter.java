@@ -23,7 +23,7 @@ public class MenuAdapter extends ArrayAdapter<String> {
         this.datos = opcionesMenu;
 
     }
-
+    //Con este metolo cargo el listView
     public View getView (int position, android.view.View convertView, ViewGroup parent){
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         if(convertView == null){

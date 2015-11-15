@@ -22,16 +22,16 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //Creo un array con los elementos del listViev
         String[] opcionesLista = {"Fran", "Alba", "Alejandro", "Laia"};
-
+        //Como hay que pasarle una lista, convierto el array en un arraylist
         ArrayList<String> listaMenu = new ArrayList<String>(Arrays.asList(opcionesLista));
-
+        //Le paso los datos al menuadapter
         MenuAdapter adapter = new MenuAdapter(this, listaMenu);
-
+        //Creo y declaro el listViev y le paso el adapter
         final ListView lv = (ListView) findViewById(R.id.listView);
         lv.setAdapter(adapter);
-
+        //metodo necesario para poder usar los menus contextuales. Le paso el listView
         registerForContextMenu(lv);
     }
 
@@ -76,7 +76,7 @@ public class MainActivity extends Activity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.context_menu, menu);
     }
-
+    //Con este metodo se que elemento he seleccionado
     public boolean onContextItemSelected(MenuItem item){
         Toast t;
 
